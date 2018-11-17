@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 
-<suite name="ExamQaAutomation">
+<suite name="Search Test Firefox for Chrome">
     <test name="Search Test Chrome">
         <parameter name="browserType" value="Chrome"/>
         <classes>

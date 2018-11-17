@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GoogleSearchResultsFirstPage extends GoogleBasePage{
 
-    @FindBy(id = "rso")
+    @FindBy(xpath = "//div[@class='med']")
     private WebElement searchResultsFrame;
 
     @FindBy(xpath = "//div[@class='srg']")
@@ -19,18 +19,32 @@ public class GoogleSearchResultsFirstPage extends GoogleBasePage{
     @FindBy(xpath = "//div[@class='srg']/div[@class='g']")
     private List<WebElement> searchResultElements;
 
-    @FindBy(xpath = "//a[@aria-label='Page 2']//..")
+    @FindBy(xpath = "//span[@class='csb']")
     private WebElement searchPageTwo;
 
+
+    /**
+     * Constructor
+     * @param webDriver  web driver
+     */
     public GoogleSearchResultsFirstPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
+    /**
+     * Method which test is page loaded or not
+     * @return - return element in display
+     */
     public boolean isPageLoaded(){
+
         return searchResultsFrame.isDisplayed();
     }
 
+    /**
+     * Method which get list of search term list of web elements
+     * @return - list of text elements from search results
+     */
     public List<String> getSearchResults(){
         List<String> searchResultsList = new ArrayList();
         for (WebElement searchResultElement : searchResultElements){
@@ -42,8 +56,12 @@ public class GoogleSearchResultsFirstPage extends GoogleBasePage{
         return searchResultsList;
     }
 
+    /**
+     * Method which navigate to second page of search test
+     * @return -return new page which we search term
+     */
     public GoogleSearchResultsSecondPage goToSecondPage()  {
-        waitUntilElementIsVisible(searchPageTwo,5);
+        waitUntilElementIsClickable(searchPageTwo, 5);
         searchPageTwo.click();
         return new GoogleSearchResultsSecondPage(webDriver);
     }

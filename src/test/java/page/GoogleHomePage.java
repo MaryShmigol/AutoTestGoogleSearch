@@ -15,11 +15,18 @@ public class GoogleHomePage extends GoogleBasePage{
     private WebElement rootSection;
 
 
-
+    /**
+     * Constructor
+     * @param webDriver - web driver
+     */
     public GoogleHomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
+
+    /** Method which test is page loaded or not
+     * @return - return page in which search
+     */
     public boolean isPageLoaded() {
         return rootSection.isDisplayed();
     }
