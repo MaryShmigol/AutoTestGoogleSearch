@@ -1,17 +1,28 @@
 
  ###Pages###
+ 
  GoogleBasePage - basic page object containing general methods all pages
+ 
  GoogleHomePage - page object main page google, containing element and methods with which we can search
+ 
  GoogleSearchResultsFirstPage - first page object with search term,  containing element and methods with which we can search and format result page
+ 
  GoogleSearchResultsSecondPage - second page object with search term,  containing element and methods with which we can search and format result page
+ 
 
 ###Test###
+
  GoogleBasePage - basic test object containing general method
+ 
  GoogleSearchTest - test for validating search result, checks 1 and 2 pages containing search term.
+ 
 
  .gitignore - document with file ignore Git
+ 
  pom.xml - information about project, dependencies to external libraries
+ 
  search-tests.xml - parametrized browsers
+ 
 
  ##Downloading:##
  Download 'Community' version of Intellij IDEA here: https://www.jetbrains.com/idea/download/#section=windows
