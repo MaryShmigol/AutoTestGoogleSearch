@@ -32,8 +32,11 @@
  Download and Install Maven https://dev-pages.info/how-to-install-maven-on-windows-10/
 
  run tests via command line:
+ 
  open terminal
+ 
  insert a line "mvn -f C:\local\path\to\pom.xml clean install"
+
 
 
 
